@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML cheat sheet</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./about.html">about</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Html tags cheatsheet</h1>
+      <div class="home-categories-list">
+        <h2>Basic Html tags</h2>
+        <h2>Forms and Input Tags</h2>
+      </div>
+      <div class="home-category-content">
+
+        <h3>Basic Html tags</h3>
+        <ol>
+          <li>
+            <h4>Html comment Tag</h4>
+            <p>Used for comments</p>
+          </li>
+          <li>
+            <h4>Html doctype Tag</h4>
+            <p>Tells to browser type of document</p>
+          </li>
+          <li>
+            <h4>Html Tag</h4>
+            <p>Defines the root of html</p>
+          </li>
+          <li>
+            <h4>Html head Tag</h4>
+            <p>Containes the meta data of the html document</p>
+          </li>
+          <li>
+            <h4>Html body Tag</h4>
+            <p>Containes the web page painted content</p>
+          </li>
+        </ol>
+      </div>
+      <div class="home-category-content">
+        <h3>Forms and Input Tags</h3>
+        <ol>
+          <li>
+            <h4>Html form Tag</h4>
+            <p>Tag that creates a form, can submit data to new url</p>
+            <div class="home-example-container">
+              <form class="home-form" action="./about.html" method="post">
+                <div>
+                  <label for="form-name">Name</label>
+                  <input
+                    id="form-name"
+                    type="text"
+                    placeholder="Type your name"
+                  />
+                </div>
+                <div>
+                  <label for="form-email">Email</label>
+                  <input
+                    id="form-email"
+                    type="email"
+                    placeholder="Type your email"
+                  />
+                </div>
+                <div>
+                  <label for="form-pass">Password</label>
+                  <input
+                    id="form-pass"
+                    type="password"
+                    placeholder="Type your password"
+                  />
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </li>
+          <li>
+            <h4>Html input Tag</h4>
+            <p>Tag element for user input type text</p>
+            <div class="home-example-container">
+              <input id="form-name" type="text" placeholder="Type your name" />
+            </div>
+          </li>
+          <li>
+            <h4>Html textarea Tag</h4>
+            <p>Tag element for user input type big text</p>
+            <div class="home-example-container">
+              <textarea></textarea>
+            </div>
+          </li>
+          <li>
+            <h4>Html button Tag</h4>
+            <p>Tag element for creating a clickable button</p>
+            <div class="home-example-container">
+              <button>click me</button>
+            </div>
+          </li>
+          <li>
+            <h4>Html checkbox Tag</h4>
+            <p>Tag element for creating a clickable checkbox</p>
+            <div class="home-example-container">
+              <input type="checkbox" />
+            </div>
+          </li>
+          <li>
+            <h4>Html checkbox Tag</h4>
+            <p>Tag element for creating a clickable checkbox</p>
+            <div class="home-example-container">
+              <form>
+                <input
+                  type="radio"
+                  id="html"
+                  name="fav_language"
+                  value="HTML"
+                />
+                <label for="html">HTML</label><br />
+                
+                <input type="radio" id="css" name="fav_language" value="CSS" />
+                <label for="css">CSS</label><br />
+                
+                <input
+                  type="radio"
+                  id="javascript"
+                  name="fav_language"
+                  value="JavaScript"
+                />
+                <label for="javascript">JavaScript</label>
+              </form>
+            </div>
+          </li>
+          <li>
+            <h4>Html select Tag</h4>
+            <p>Tag element for creating a dropdown style input</p>
+            <div class="home-example-container">
+                <select id="home-select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="home-category-content">
+        <h3>Css Flex box</h3>
+        <div class="container-flex">
+            <div class="flex-child" id="blue-circle" style="background-color: red;"></div>
+            <div class="flex-child red"></div>
+            <div class="flex-child green"></div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="index.js"></script>
+  </body>
+</html>

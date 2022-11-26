@@ -1,0 +1,19 @@
+body {
+  background-color: #333333;
+}
+
+p {
+  background-color: #0f4c5c;
+}
+
+div p {
+  background-color: pink;
+}
+div p:hover {
+  color: aqua;
+}
+div h1 {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

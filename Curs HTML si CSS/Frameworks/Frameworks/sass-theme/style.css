@@ -1,0 +1,18 @@
+/* horizontal & vertical align */
+[class*=container] {
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.container-1 {
+  background-color: #e76f51;
+  color: #2b2d42;
+}
+
+.container-2 {
+  background-image: linear-gradient(to top left, black, yellow, red, aliceblue);
+}
+
+/*# sourceMappingURL=style.css.map */

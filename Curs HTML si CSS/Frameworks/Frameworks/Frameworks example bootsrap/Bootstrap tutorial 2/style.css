@@ -1,0 +1,52 @@
+.grid {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    "hd"
+    "as"
+    "mn"
+    "ft" / 10fr;
+}
+
+@media (min-width: 576px) {
+  .grid {
+    grid-template:
+      "hd hd"
+      "as mn"
+      "ft ft" / 1fr 11fr;
+  }
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template:
+      "hd hd"
+      "as mn"
+      "as ft" / 2fr 10fr;
+  }
+}
+@media (min-width: 992px) {
+  .grid {
+    grid-template:
+      "hd hd"
+      "as mn"
+      "as ft"/ 1fr 6fr;
+  }
+}
+header {
+  grid-area: hd;
+  height: 5rem;
+}
+
+aside {
+  grid-area: as;
+}
+
+main {
+  grid-area: mn;
+  height: 80vh;
+}
+
+footer {
+  grid-area: ft;
+  height: 3rem;
+}

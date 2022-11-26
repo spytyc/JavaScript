@@ -1,0 +1,355 @@
+/* Which rule will take precedence? */
+/* The more specific rule will win. If two or more
+rules have the same specificity, the one that appears
+last wins */
+
+/* Calculate specificity */
+/* 3 Slots -> Slot3 Slot2 Slot1  */
+/* Slots work like numbers */
+/* 100 > 010 */
+/* 010 > 002 */
+
+/* Slot 1 -> rightmost, the least important */
+/* We increase this value when we have 
+*element* selector */
+
+p {
+  /* element selector */
+  color: red;
+} /* 001*/
+p span {
+  color: green;
+} /* 002*/
+p > span {
+  color: blue;
+} /* 002*/
+div p > span {
+  color: purple;
+} /* 003*/
+
+/* Slot 2
+- is incremented by:
+  - class selectors
+  - pseudo-class selector
+  - attribute selectors */
+
+.dog-name {
+  /* class selectors */
+  color: yellow;
+} /* 010 */
+
+.dog-name .name {
+  /* class selectors */
+  /* 020 */
+}
+
+:hover {
+  /*pseudo-class selectors*/
+  color: blue;
+} /* 010 */
+
+/* <a href='/terms.pdf' target="_blank" /> */
+[href=".pdf"] {
+} /* 010 */
+
+[target="_blank"] {
+  color: red;
+} /* 010 */
+
+/* Slot1 & Slot2 can be combined */
+
+div .dog-name {
+} /* 011 */
+
+/* We can repeat class and increase specificity */
+
+.name {
+} /* 010 */
+.name .name {
+} /* 020 */
+
+/* Slot3 */
+/* Slot3 hold most important thing: the id */
+/* Every element can have an id attribute assigned,
+  and we can use that in our stylesheet to target element */
+
+#name {
+} /* 100 */
+.user #name {
+} /* 110 */
+#name span {
+} /* 101 */
+
+/* Slot4  */
+/* - is affected by inline styles. */
+/* Any inline style will have precedence 
+over any rule defined in external CSS file, 
+or inside the <style> tag in the page header */
+
+/* Slot5 */
+/* If !important is used, the rule fills Slot5 */
+/* Importance - if a rule has !important */
+
+/* Inheritance */
+/* When you set some properties on a selector in CSS, 
+they are inherited by all the children of that selector */
+/* Some properties makes more sense to not be inherited  */
+/* Example: fonts: you don't need to apply font-family 
+to every single tag of your page. You set the body tag font, and
+evey children inherits it, along with other properties */
+/* The background-color property, on the other hand, make little 
+sense to bne inherited */
+
+/* Forcing properties to inherit */
+p {
+  background-color: inherit;
+}
+
+/* Forcing properties to NOT inherit */
+p {
+  background-color: revert;
+}
+
+/* other values: initial, unset */
+
+/* CSS Imports */
+@import url(file.css) all;
+
+/* CSS Colors */
+/* - color
+- background-color
+- border-color */
+
+/* CSS Units */
+/* - px, em, rem, %, vh, vw */
+
+/* - pixels, */
+/*- percentage,*/
+.child {
+  width: 50%; /* 50% of parent's width*/
+}
+/*- real-world units - cm, mm, in, pt */
+.child {
+  width: 1cm;
+}
+/* - relative units - em, rem, ex, ch */
+/* - relative to font-size */
+/* - viewport units - vw, vh, vmin, vmax  */
+/* - relative to the viewport */
+main {
+  /* width: 50vw; 50% of the viewport width */
+}
+/* - fraction units - fr  */
+/* fraction units - they are used in CSS Grid to divide into fractions */
+
+/* calc() function */
+
+main {
+  /* width: calc(80%); */
+  background-color: #fefae0;
+}
+
+:root {
+  --primary-color: #333;
+}
+
+main {
+  --primary-color: #333;
+}
+
+main {
+  color: var(--primary-color);
+}
+
+/* BOX Model */
+
+/* fom inside to outside, we have:
+- content area
+- padding
+- border
+- margin */
+
+/* The default behavior of browsers when 
+calculating the width of an element is 
+to apply the calculated width and height to the 
+content area, without taking any of the padding, 
+border and margin in consideration. */
+/* This approach has proven to be complicated */
+/* We can change this behavior by setting the 
+*box-sizing* property */
+/* Box-sizing has 2 values:
+- content-box - the default one
+- border-box - the new thing that we are looking for:
+*/
+.my-div {
+  box-sizing: border-box;
+}
+/* If I set that on an element, width and height calculation
+include the padding and the border. Only the margin is left out,
+which is reasonable, since tipically a margin is outside box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Display */
+/* - determines how an object is rendered in the browser */
+/* - block
+    -- elements take 100% of width of the page
+- inline 
+  -- inline elements don't have margin or padding applied
+  -- same for width and height
+  -- you can add them, but the appearence won't change
+- flex
+- grid
+ + many more */
+
+/* Positioning */
+/* 
+ - static - default
+ - relative - we can positon element with top, right, bottom left
+ - absolute
+ - fixed
+ - sticky
+  */
+
+main {
+  /* position: relative;
+  top: 100px;
+  left: 100px; */
+  /* top: -20px; move up relative to its container */
+}
+
+/* CSS GRID */
+
+/* Is a layout system */
+/* We use grid for 2 dimensional layouts */
+/* Css grid can be activated by setting display:grid
+on a container element */
+
+main {
+  /* defines a grid with 3 columns each 100px wide 
+  and 2 rows with a 200px height each */
+  display: grid;
+  /* grid-template-columns: 200px 200px 200px; */
+  /* the cells from second column is flexible */
+  /* grid-template-rows: 200px 200px; */
+}
+
+main > div {
+  border: 1px solid #d4a373;
+}
+
+main {
+  /* Add spacing */
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+
+/* Every cell has the option to occupy more than one box in the row
+and expand horizontally or vertically to get more space, while 
+respecting the grid proportions set in the container */
+
+main > div:nth-of-type(1) {
+  background-color: #d4a373;
+}
+
+main {
+  /* Using fractions */
+  /* grid-template-columns: 3rem 15% 1fr 1fr; */
+  grid-template-rows: 100px 100px;
+}
+
+main {
+  /* using repeat */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* using minmax, we set a minimum width for the column */
+main {
+  /* th first cell never takes less than 400px */
+  grid-template-columns: minmax(400px, 1fr) 1fr 1fr;
+  /* we can set just a maximum value using auto keyword */
+  grid-template-columns: minmax(auto, 50%) 1fr 1fr;
+  /* or we can set a minimum value */
+  grid-template-columns: minmax(200px, auto) 1fr 1fr;
+}
+
+/* grid template areas */
+main {
+  grid-template-areas:
+    "main1 side1 ."
+    ". side3 side4";
+}
+
+main > div:nth-of-type(1) {
+  grid-area: main1;
+}
+main > div:nth-of-type(2) {
+  grid-area: side1;
+}
+main > div:nth-of-type(3) {
+  grid-area: side2;
+}
+main > div:nth-of-type(4) {
+  grid-area: main2;
+}
+main > div:nth-of-type(5) {
+  grid-area: side3;
+}
+main > div:nth-of-type(6) {
+  grid-area: side4;
+}
+
+/* Fill a page with a grid: */
+main {
+  height: 100vh;
+}
+
+/* FlexBox aka Flexible Box Module */
+/* Is a layout system */
+/* flexbox is a one dimensional layout model*/
+/* it will control the layout based on a row or 
+on a column, but not together at the same time*/
+/* The main goal of flexbox is to allow items to 
+fill the whole space offered by the container,
+depending on some rules you set 
+/* A flexbox is applied to a container, by setting: */
+
+.container {
+  display: flex;
+}
+
+/* Container properties: */
+/* container properties set the general rules for its items: */
+/* 
+- flex-direction: row, row-reverse, column, column, reverse
+    - determines if the container should align 
+    its items as rows or as columns
+- justify-content: flex-start, flex-end etc
+- align-items: flex-start, flex-end, center, baseline, stretch
+- flex-wrap
+- flex-flow 
+*/
+
+/* Flex Item Properties: */
+/* 
+- order,
+- align-self: flex-start, flex-end, center, baseline
+    - ☝️ override the container align-items setting,
+- flex-grow: 0, 1, 2, 3 etc
+    - if all items are defined as 1 and one is defined as 2, 
+    the bigger element will take the space of two '1' items,
+- flex-shrink: 1, 2, 3 etc,
+  - if all items are defined as 1 and one is defined as 2, 
+    the bigger element will shrink two times more than '1' items,
+- flex-basis: auto, 200px
+    - if set to auto, it sizes the item according to its width 
+    or height and adds extra space based on flex-grow property
+    - if set to 0, it does not add any extra space for item
+    when calculating the layout
+    - if you specify a pixel number value, it will use that 
+    as the length value (width or height, depending if it's a 
+    row or a column item) 
+- flex */

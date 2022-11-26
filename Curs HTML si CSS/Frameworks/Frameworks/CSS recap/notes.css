@@ -1,0 +1,33 @@
+/* a CSS rule set:
+-one part called selector
+-other parth called declaration - contains rules
+                                -each in composed by property and value
+*/
+
+/* in this example , p is the selector ,and applies one rule which 
+sets the value 20px to the font-size property */
+
+p{
+    font-size: 20px;
+}
+
+/* multiple rules stacked one after the other */
+h1{
+    font-size: 40px;
+}
+
+a{
+    color: blue;
+}
+
+/* a selector can target one more items: */
+
+p,
+a,
+.my-class,
+#my-id {
+    font-size: 20px;
+}
+/* and it can target HTML tags,
+or elements that contain class attribute with .myclass ,
+or elements that have the id attribute #my-id*/

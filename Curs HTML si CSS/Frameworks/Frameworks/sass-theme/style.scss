@@ -1,0 +1,53 @@
+@use 'sass:list';
+
+/* horizontal & vertical align */
+// * verifica daca cuvantul contine termenul (pe undeva)
+// ~ verifica daca cuvantul este exact termenul cautat
+[class*="container"]{
+    height: 50vh;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+// theme colors
+$clr-primary: #264653 ;
+$clr-secondary: #e76f51 ;
+$clr-accent: #e9c46a ;
+
+// neutral colors
+$clr-neutral-light: #edf2f4 ;
+$clr-neutral-dark: #2b2d42 ;
+
+// gradients
+// variable as a list of variables 
+$simple-gradient: $clr-primary , $clr-secondary;
+$complex-gradient:$clr-primary , $clr-secondary, $clr-accent;
+ 
+// assemble elements in schemes
+$scheme-default: $clr-neutral-light, $clr-primary;
+$scheme-secondary: $clr-neutral-dark, $clr-secondary;
+$scheme-accent-gradient: $clr-neutral-dark, $complex-gradient;
+$scheme-simple-gradient: $clr-neutral-light, $simple-gradient;
+// mixin
+
+@mixin color-schema($text, $bg) {
+    // if we have a single bg color -> set a background color
+    // if we have multiple bg colors -> set a gradient
+    @if list.length($bg) == 1  {
+        // if length is 1 -> list with 1 element -> set background color
+        background-color: $bg;
+        color: $text;
+    } @else {
+        // if length is not 1 -> list with mulitple elements -> 
+        // -> set gradient on the background
+        background-image: linear-gradient(to top left, $bg)
+    }
+}
+.container-1 {
+    @include color-schema($scheme-secondary...);
+}
+
+.container-2 {
+    @include color-schema(white, (black, yellow, red, aliceblue));
+}

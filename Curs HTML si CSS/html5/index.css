@@ -1,0 +1,61 @@
+header {
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+main {
+  padding: 3rem 1rem;
+  background-color: antiquewhite;
+}
+
+main section,
+div {
+  font-size: 14px;
+  height: 15rem;
+  overflow-y: auto;
+  border: 1px solid #bbaf9f;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+tbody button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 24px;
+    cursor: pointer;
+    background: linear-gradient(120deg, #7b7878 0%, white 100%);
+    box-shadow: 2px 2px 5px 1px #7b7878ad;
+    border-radius: 10px;
+}
+
+#key-display {
+    font-size: 24px;
+    text-align: center;
+}

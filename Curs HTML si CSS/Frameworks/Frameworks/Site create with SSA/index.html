@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Quicksand:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <!-- Will use FLEXBOX for the layout of the nav component -->
+      <div id="nav-logo-section" class="nav-section">
+        <a href="#">
+          <!-- i.fa-solid.fa-dumpster-fire -->
+          <i class="fa-solid fa-dumpster-fire"> </i>
+        </a>
+      </div>
+      <div id="nav-link-section" class="nav-section">
+        <a href="#">ABOUT</a>
+        <a href="#">WORK</a>
+      </div>
+      <div id="nav-social-section" class="nav-section">
+        <a href="#">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-codepen"></i>
+        </a>
+      </div>
+      <div id="nav-contact-section" class="nav-section">
+        <a href="#"> Contact </a>
+      </div>
+    </nav>
+    <main>
+      <!-- Will use GRID for the layout of the main component -->
+      <article data-index="0" data-status="active">
+        <div class="article-image-section article-section"></div>
+        <div class="article-description-section article-section">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum
+            placeat facilis doloribus vitae dicta ea similique saepe nam.
+            Repudiandae inventore quam nesciunt at asperiores magni earum iste
+            sequi adipisci.
+          </p>
+        </div>
+        <div class="article-title-section article-section">
+          <h1>PAGE 0</h1>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="article-nav-section article-section">
+          <button
+            class="article-nav-button btn btn-light"
+            type="button"
+            onclick="handleLeftClick()"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            class="article-nav-button btn btn-light"
+            type="button"
+            onclick="handleRightClick()"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </article>
+      <article data-index="1" data-status="inactive">
+        <div class="article-image-section article-section"></div>
+        <div class="article-description-section article-section">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum
+            placeat facilis doloribus vitae dicta ea similique saepe nam.
+            Repudiandae inventore quam nesciunt at asperiores magni earum iste
+            sequi adipisci.
+          </p>
+        </div>
+        <div class="article-title-section article-section">
+          <h1>PAGE 1</h1>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="article-nav-section article-section">
+          <button
+            class="article-nav-button btn btn-light"
+            type="button"
+            onclick="handleRightClick()"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            class="article-nav-button btn btn-light"
+            type="button"
+            onclick="handleLeftClick()"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </article>
+      <article data-index="2" data-status="inactive">
+        <div class="article-image-section article-section"></div>
+        <div class="article-description-section article-section">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum
+            placeat facilis doloribus vitae dicta ea similique saepe nam.
+            Repudiandae inventore quam nesciunt at asperiores magni earum iste
+            sequi adipisci.
+          </p>
+        </div>
+        <div class="article-title-section article-section">
+          <h1>PAGE 2</h1>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="article-nav-section article-section">
+          <button
+            class="article-nav-button btn btn-light"
+            type="button"
+            onclick="handleLeftClick()"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            class="article-nav-button btn btn-light"
+            type="button"
+            onclick="handleRightClick()"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

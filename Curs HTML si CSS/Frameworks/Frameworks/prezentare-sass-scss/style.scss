@@ -1,0 +1,29 @@
+// Specifity Hierarchy
+// Inline styles
+// IDs: #nav
+// Classes, pseudo-classes, attribute selector (.nav, :hover, [href])
+// Elements, pseudo-elements
+// EXCEPTION: the "!important" rule
+
+$background-color: #0f4c5c;
+
+body {
+    $background-color:#333333;
+    background-color: $background-color;
+}
+
+p {
+    background-color: #0f4c5c;
+}
+
+div {
+    p {
+        background-color: pink;
+        &:hover {
+            color: aqua;
+        }
+    }
+    h1 {
+        color: white;
+    }
+}
