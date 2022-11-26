@@ -1,0 +1,20 @@
+/**Inline styles - Example: <h1 style="color: pink;">
+IDs - Example: #navbar
+Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+Elements and pseudo-elements - Example: h1, :before**/
+/*adaugi o variabla in css care va fi folosita in tot css-ul - merge numai daca ai node instalat cu sass - npm install -g sass*/
+/*sass style.scss style.css in terminal pt a creea fisierele ce vor fi utilizate la compilarea instructiunilor din style.scss
+sass --watch style.css in terminal pt a cere sass sa urmeze fisierul pe care il modifice si sa compileze intructiunile in style.css*/
+body {
+  background-color: aqua;
+  color: rgb(202, 154, 63);
+}
+
+div p {
+  background-color: blanchedalmond;
+}
+div p:hover {
+  color: aqua;
+}
+
+/*# sourceMappingURL=style.css.map */
